@@ -18,7 +18,7 @@ function ExamList(){
     this.add = (exam) => {
         return new Promise((resolve, reject) => {
             const sql =  'INSERT INTO exam (code, name, cfu, date, score) VALUES (?,?,?,?,?)';
-            db.run(sql, [exam.code, exam.name, ], (err) => {
+            db.run(sql, [exam.code, exam.name, exam.cfu, exam.date, exam.score], (err) => {
                 if(err){
                     reject(err);
                 }
@@ -44,6 +44,13 @@ function ExamList(){
             })
         })
     }
+
+    this.getFirst = async () => {
+        const list = await this.getAll();
+        return list[0];
+    }
+
+
 }
 
 
@@ -62,6 +69,10 @@ async function main(){
         });
     exams.getAll().then((list) => {console.log(list)});  
     const myExams = await exams.getAll();  
+    console.log(myExams);
+    const firstExam = await exams.getFirst();
+    console.log(firstExam);
 }
 
+main();
 
