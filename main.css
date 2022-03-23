@@ -1,0 +1,29 @@
+/* First type of selector: by its name*/
+h1 {
+    color: red;
+    background-color: aqua;
+}
+/* Second type*/
+main h1 {
+    color: green;
+    background-color: black;
+}
+/* # is used to refer an ID */
+#navbar {                   
+    color:black;
+    background-color: gray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* . is used to refer a Class */
+.name{
+    font-style: italic;
+    color:blue;
+}
+div#container {
+    display: flex;
+}
+#container aside {
+    background-color: gray;
+    padding-left: 10px;
+    padding-right: 10px;
+}
